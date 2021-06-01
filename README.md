@@ -3,7 +3,7 @@ Game Design Document
 
 **Name of the Game: Forgotten Relics**
 
-**Link to the game repository:**
+**Link to the game repository: https://github.com/jcluq/ForgottenRelics**
 
 -   based on DOI: 10.1109/CGames.2012.
 -   Date: 01/

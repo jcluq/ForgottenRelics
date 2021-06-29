@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
             {
                 for (int j = 0; j < giver.quests[i].MyCollectObjectives.Length; j++)
                 {
-                    Debug.Log(inventory.GetAmmount(_item));     
+                 //   Debug.Log(inventory.GetAmmount(_item));     
                     giver.quests[i].MyCollectObjectives[j].UpdateItemCount(_item,inventory.GetAmmount(_item));
                 }
                

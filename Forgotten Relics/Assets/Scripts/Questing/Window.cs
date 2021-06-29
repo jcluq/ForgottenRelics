@@ -9,14 +9,20 @@ public class Window : MonoBehaviour
 
     public virtual void Open()
     {
-        canvasGroup.alpha = 1;
-        canvasGroup.blocksRaycasts = true;
+      
+            Animator anim = this.GetComponent<Animator>();
+
+
+            anim.SetBool("Open", true);
+        
     }
 
     public virtual void Close()
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = false;
+        Animator anim = this.GetComponent<Animator>();
+
+
+        anim.SetBool("Open", false);
     }
     // Start is called before the first frame update
     void Start()

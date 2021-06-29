@@ -73,6 +73,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Questing\QuestGiver.cs" />
+    <Compile Include="Assets\ScriptableObjects\Stats\Scripts\StatScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\ScriptableObjects\Items\Scripts\ItemDatabaseObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\VertexShakeA.cs" />
@@ -115,7 +116,8 @@
     <Compile Include="Assets\Scripts\PCScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Questing\InnkeeperTile.cs" />
-    <Compile Include="Assets\ScriptableObjects\Stats\Scripts\StatScript.cs" />
+    <Compile Include="Assets\Scripts\CharAnimation.cs" />
+    <Compile Include="Assets\Scripts\Billboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CustomQuest\Assets\GFX\UI\Font\FONTLOG.txt" />

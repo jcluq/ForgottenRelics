@@ -103,7 +103,7 @@ public class CollectObjective : Objective
 
                 if (item.Name.ToLower() == MyType.ToLower())
                 {
-                    Debug.Log(count);
+                   // Debug.Log(count);
                     CurrentAmount = count;
                     QuestLog.MyInstance.UpdateSelected();
                     QuestLog.MyInstance.CheckCompletion();

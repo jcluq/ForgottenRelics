@@ -20,6 +20,8 @@ public class QuestLog : MonoBehaviour
 
     public List<Quest> quests = new List<Quest>();
 
+   
+
     [SerializeField]
     private TextMeshProUGUI questDescription;
 
@@ -98,21 +100,19 @@ public class QuestLog : MonoBehaviour
 
     public void OpenClose()
     {
-        if (canvasGroup.alpha == 1)
-        {
-            Close();
-        }
-        else
-        {
-            canvasGroup.alpha = 1;
-            canvasGroup.blocksRaycasts = true;
-        }
+
+        Animator anim = this.GetComponent<Animator>();
+
+
+        anim.SetBool("Open", !anim.GetBool("Open"));
     }
 
     public void Close()
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = false;
+        Animator anim = this.GetComponent<Animator>();
+
+
+        anim.SetBool("Open",false);
     }
 
     public bool HasQuest(Quest quest)

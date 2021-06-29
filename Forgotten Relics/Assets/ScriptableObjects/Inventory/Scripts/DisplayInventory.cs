@@ -127,21 +127,19 @@ public class DisplayInventory : MonoBehaviour
 
     public void OpenClose()
     {
-        if (canvasGroup.alpha == 1)
-        {
-            Close();
-        }
-        else
-        {
-            canvasGroup.alpha = 1;
-            canvasGroup.blocksRaycasts = true;
-        }
+
+        Animator anim = this.GetComponent<Animator>();
+
+
+        anim.SetBool("Open", !anim.GetBool("Open"));
     }
 
     public void Close()
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = false;
+        Animator anim = this.GetComponent<Animator>();
+
+
+        anim.SetBool("Open", false);
     }
 }
 public class MouseItem

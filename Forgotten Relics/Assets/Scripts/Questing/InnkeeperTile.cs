@@ -7,8 +7,15 @@ public class InnkeeperTile : MonoBehaviour
     public Terrain Tile;
     public QuestGiverWindow cg;
     private bool en = false;
-    
+    Animator anim;
+
     // Start is called before the first frame update
+
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     void Start()
     {
         cg.Close();
@@ -23,14 +30,15 @@ public class InnkeeperTile : MonoBehaviour
         {
             en = true;
             cg.Open();
-            
+            anim.SetBool("Open", true);
 
         }
         
     if (!Tile.current && en == true)
         {
             cg.Close();
-            
+            anim.SetBool("Open", false);
+
             en = false;
         }
     }

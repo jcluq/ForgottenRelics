@@ -97,8 +97,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\ScriptableObjects\Inventory\Scripts\DisplayInventory.cs" />
+    <Compile Include="Assets\Scripts\CharAnimation.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -116,8 +118,13 @@
     <Compile Include="Assets\Scripts\PCScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Questing\InnkeeperTile.cs" />
-    <Compile Include="Assets\Scripts\CharAnimation.cs" />
-    <Compile Include="Assets\Scripts\Billboard.cs" />
+    <Compile Include="Assets\Scenes\AIAssets\PlayerController.cs" />
+    <Compile Include="Assets\PlayerMotor.cs" />
+    <Compile Include="Assets\Scenes\AIAssets\FSM\AbstractFSMState.cs" />
+    <Compile Include="Assets\IdleBehaviour.cs" />
+    <Compile Include="Assets\FollowBehaviour.cs" />
+    <Compile Include="Assets\RunBehaviour.cs" />
+    <Compile Include="Assets\FlockBehaviourScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CustomQuest\Assets\GFX\UI\Font\FONTLOG.txt" />

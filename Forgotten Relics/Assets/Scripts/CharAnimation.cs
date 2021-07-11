@@ -37,8 +37,8 @@ public class CharAnimation : MonoBehaviour
     {
         Vector3 norDir = _direction.normalized;
 
-        float step = 360 / 4;
+        //float step = 360 / 4;
        
-        float angle = Vector3.SignedAngle(Vector3.forward, norDir,Vector3.up);
+       // float angle = Vector3.SignedAngle(Vector3.forward, norDir,Vector3.up);
     }
 }

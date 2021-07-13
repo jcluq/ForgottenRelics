@@ -11,6 +11,8 @@ public class FollowBehaviour : StateMachineBehaviour
     private Transform PlayerPos;
     private Transform NPCPos;
     public NavMeshAgent playerNav;
+    private GameObject[] enemyFlock;
+    private GameObject objective;
     public float speed;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,6 +21,8 @@ public class FollowBehaviour : StateMachineBehaviour
         NPCPos = GameObject.FindGameObjectWithTag("NPC").transform;
         playerNav = GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>();
         _navMesh = GameObject.FindGameObjectWithTag("NPC").GetComponent<NavMeshAgent>();
+        enemyFlock = GameObject.FindGameObjectsWithTag("flockAgent");
+
         
     }
 
@@ -26,12 +30,35 @@ public class FollowBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-        _navMesh.SetDestination(PlayerPos.position);
-        Debug.Log("tick");
+        float distance = Vector3.Distance(enemyFlock[0].transform.position, animator.transform.position);
+
+        foreach (GameObject enemy in enemyFlock)
+        {
+           if(Vector3.Distance(enemy.transform.position, animator.transform.position) < distance)
+            {
+                objective = enemy;
+                distance = Vector3.Distance(enemy.transform.position, animator.transform.position);
+            }
+        }
+
+
+        _navMesh.SetDestination(objective.transform.position);
+
+
+
+
+       // Debug.Log("tick");
         if (Input.GetKeyDown(KeyCode.Space))
         {
             
            
+            animator.SetBool("isFollowing", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+
+            animator.SetBool("isPatrolling", true);
             animator.SetBool("isFollowing", false);
         }
 

@@ -8,6 +8,7 @@ TagManager:
   - qgiv
   - NPC
   - flockAgent
+  - pat1
   layers:
   - Default
   - TransparentFX

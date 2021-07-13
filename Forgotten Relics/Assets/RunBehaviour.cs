@@ -26,35 +26,50 @@ public class RunBehaviour : StateMachineBehaviour
     {
         {
 
-            float dist = Vector3.Distance(PlayerPos.position, _navMesh.transform.position);
-            
-            if (dist < 6)
+            float distP = Vector3.Distance(PlayerPos.position, _navMesh.transform.position);
+            float distNPC = Vector3.Distance(NPCPos.position, _navMesh.transform.position);
+            List<Transform> tforms = getNeighborsTransforms();
+            Vector3 allignment = AlignmentMove(tforms);
+            Vector3 avoidance = AvoidanceMove(tforms);
+            Vector3 cohesion = CohesionMove(tforms);
+            Vector3 vecs = avoidance + cohesion;
+            int elems = 2; 
+
+            if (distP < 6 )
             {
+                
                 Debug.Log("cerca");
-                Vector3 dirToPlayer = animator.transform.position - PlayerPos.position;
+                vecs +=  animator.transform.position - PlayerPos.position;
+                elems++;
+                vecs /= elems;
+
+                Vector3 newPos = animator.transform.position + vecs;
+                _navMesh.SetDestination(newPos);
+            }
+
+            if (distNPC < 6) {
+
+                vecs += animator.transform.position - NPCPos.position;
+                elems++;
+                vecs /= elems;
+                Vector3 newPos = animator.transform.position + vecs;
+                _navMesh.SetDestination(newPos);
+            }
 
 
-                List<Transform> tforms = getNeighborsTransforms();
-
-
-
-                Vector3 allignment = AlignmentMove(tforms);
-                Vector3 avoidance = AvoidanceMove(tforms);
-                Vector3 cohesion = CohesionMove(tforms);
-
-
-                Vector3 vecs = (allignment + dirToPlayer + avoidance+ cohesion) / 4;
+           
+              //  Vector3 vecs = (allignment + dirToPlayer + avoidance+ cohesion) / 4;
                 
                     
                     
-                Vector3 newPos =  animator.transform.position + vecs;
+                //Vector3 newPos =  animator.transform.position + vecs;
 
 
 
 
 
-                _navMesh.SetDestination(newPos);
-            }
+                //_navMesh.SetDestination(newPos);
+            
 
             
         }

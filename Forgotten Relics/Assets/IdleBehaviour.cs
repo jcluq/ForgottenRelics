@@ -55,11 +55,15 @@ public class IdleBehaviour : StateMachineBehaviour
             animator.SetBool("isFollowing", true);
         }
 
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("N");
+            animator.SetBool("isPatrolling", true);
+        }
 
 
-    
 
-        if (reached)
+            if (reached)
         {
 
             Debug.Log("Moving");
@@ -92,7 +96,7 @@ public class IdleBehaviour : StateMachineBehaviour
 //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        first = false;
+       // first = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
